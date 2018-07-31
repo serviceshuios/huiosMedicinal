@@ -3,10 +3,13 @@ package com.huios.medical.metier;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
+@MappedSuperclass
 public class AbstractActivity {
 	
+	private static final long serialVersionUID = 1L; 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO) 
 	protected Long id;
