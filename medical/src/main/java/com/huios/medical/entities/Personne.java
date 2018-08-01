@@ -23,6 +23,7 @@ public class Personne extends AbstractActivity{
 	@Column(length = 20)
 	private Date dateNaissance;
 	
+	
 	public Personne() {
 		super();
 		// TODO Auto-generated constructor stub
