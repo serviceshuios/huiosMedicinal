@@ -1,4 +1,4 @@
-package com.huios.medical.metier;
+package com.huios.medical.entities;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

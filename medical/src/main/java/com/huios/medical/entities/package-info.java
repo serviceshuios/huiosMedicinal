@@ -5,4 +5,4 @@
  * @author zameddy
  *
  */
-package com.huios.medical.metier;
+package com.huios.medical.entities;
