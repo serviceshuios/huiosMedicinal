@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -27,6 +28,7 @@ public class Praticien extends Personne {
 	
 	@ManyToOne
 	private Structure structure;
+
 	
 	public Praticien() {
 		super();
