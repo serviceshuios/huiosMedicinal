@@ -1,7 +1,11 @@
 package com.huios.medical.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "connexions")
 public class Connexion extends AbstractActivity {
 
 	private String login;

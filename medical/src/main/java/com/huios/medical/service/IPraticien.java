@@ -3,18 +3,25 @@ package com.huios.medical.service;
 import java.util.Date;
 import java.util.List;
 
+import com.huios.medical.entities.Adresse;
 import com.huios.medical.entities.Creneau;
 import com.huios.medical.entities.Patient;
 import com.huios.medical.entities.Praticien;
 import com.huios.medical.entities.Rv;
 import com.huios.medical.metier.AgendaPraticienJour;
 
-public interface IMetier {
+public interface IPraticien {
 
-	// liste des clients
+	     //s'enregistrer
+		public Boolean inscription(String login, String mdp);
+	    // se connecter
+		public Praticien Connexion(String login, String mdp);
+		// création d'un profil 
+		public void creationProfil(String nom, String prenom, int age, Adresse adresse);
+	    // liste des patients
 		public List<Patient> getAllPatients();
 
-		// liste des Médecins
+		// liste des Praticiens
 		public List<Praticien> getAllPraticien();
 
 		// liste des créneaux horaires d'un médecin

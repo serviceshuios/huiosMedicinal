@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.huios.medical.entities.Adresse;
 import com.huios.medical.entities.Creneau;
 import com.huios.medical.entities.Patient;
 import com.huios.medical.entities.Praticien;
@@ -17,7 +18,7 @@ import com.huios.medical.repositories.PraticienRepository;
 import com.huios.medical.repositories.RvRepository;
 
 @Service("metier")
-public class Metier implements IMetier {
+public class PraticienImpl implements IPraticien {
 
 	// repositories 
 	@Autowired private PraticienRepository praticienRepository;
@@ -89,6 +90,24 @@ public class Metier implements IMetier {
 	public AgendaPraticienJour getAgendaMedecinJour(long idPraticien, Date jour) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Boolean inscription(String login, String mdp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Praticien Connexion(String login, String mdp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void creationProfil(String nom, String prenom, int age, Adresse adresse) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

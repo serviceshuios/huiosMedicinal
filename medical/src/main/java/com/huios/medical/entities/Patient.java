@@ -3,6 +3,7 @@ package com.huios.medical.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -10,6 +11,54 @@ import javax.persistence.Table;
 public class Patient extends Personne {
 
 	private static final long serialVersionUID = 1L;
+	
+	private String statutFamilial;
+	private String situationProfessionnelle;
+	private String groupeSanguin;
+	private Byte[] photo;
+	
+	@ManyToOne
+	private Praticien medecinTraitant;
+
+	public String getStatutFamilial() {
+		return statutFamilial;
+	}
+
+	public void setStatutFamilial(String statutFamilial) {
+		this.statutFamilial = statutFamilial;
+	}
+
+	public String getSituationProfessionnelle() {
+		return situationProfessionnelle;
+	}
+
+	public void setSituationProfessionnelle(String situationProfessionnelle) {
+		this.situationProfessionnelle = situationProfessionnelle;
+	}
+
+	public String getGroupeSanguin() {
+		return groupeSanguin;
+	}
+
+	public void setGroupeSanguin(String groupeSanguin) {
+		this.groupeSanguin = groupeSanguin;
+	}
+
+	public Praticien getMedecinTraitant() {
+		return medecinTraitant;
+	}
+
+	public void setMedecinTraitant(Praticien medecinTraitant) {
+		this.medecinTraitant = medecinTraitant;
+	}
+	
+	public Byte[] getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(Byte[] photo) {
+		this.photo = photo;
+	}
 
 	public Patient() {
 		super();
