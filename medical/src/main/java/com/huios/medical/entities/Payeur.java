@@ -1,10 +1,15 @@
 package com.huios.medical.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "payeurs")
@@ -19,6 +24,11 @@ public class Payeur extends Personne {
 	private Byte[] photo;
 	@ManyToOne
 	private Adresse adresse;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="affiliationPatientId.payeur")
+	private List<AffiliationPatient> affiliationPatient = new ArrayList<AffiliationPatient>();
+	
 	public Payeur() {
 		super();
 		// TODO Auto-generated constructor stub

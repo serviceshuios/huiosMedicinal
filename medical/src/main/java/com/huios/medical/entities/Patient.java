@@ -1,10 +1,15 @@
 package com.huios.medical.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "patients")
@@ -17,6 +22,18 @@ public class Patient extends Personne {
 	private String groupeSanguin;
 	private Byte[] photo;
 	
+	@JsonIgnore
+	@OneToMany(mappedBy="affiliationPatientId.patient")
+	private List<AffiliationPatient> affiliationPatient = new ArrayList<AffiliationPatient>();
+	
+	public List<AffiliationPatient> getAffiliationPatient() {
+		return affiliationPatient;
+	}
+
+	public void setAffiliationPatient(List<AffiliationPatient> affiliationPatient) {
+		this.affiliationPatient = affiliationPatient;
+	}
+
 	@ManyToOne
 	private Praticien medecinTraitant;
 

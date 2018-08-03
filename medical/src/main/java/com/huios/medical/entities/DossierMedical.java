@@ -1,5 +1,7 @@
 package com.huios.medical.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -15,8 +17,6 @@ public class DossierMedical extends AbstractActivity{
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_patient")
 	private Patient patient;
-	
-	private List<Praticien> praticiens;
-	
-	
+
+		
 }
