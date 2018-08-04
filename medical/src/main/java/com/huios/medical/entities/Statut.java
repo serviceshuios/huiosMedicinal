@@ -1,9 +1,10 @@
 package com.huios.medical.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name = "statuts")
@@ -11,8 +12,9 @@ public class Statut extends AbstractActivity {
 
 	private String nomStatut;
 	
-	@ManyToOne
-	private List<Praticien> praticiens;
+	@OneToMany
+	private List<Praticien> praticiens = new ArrayList<Praticien>();
+	
 	public String getNomStatut() {
 		return nomStatut;
 	}

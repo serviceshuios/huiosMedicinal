@@ -1,10 +1,10 @@
 package com.huios.medical.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -24,7 +24,7 @@ public class Praticien extends Personne {
 	private MoyenDePaiement moyenDePaiement;
 	
 	@OneToMany(mappedBy="medecinTraitant")
-	private List<Patient> mesPatients;
+	private List<Patient> mesPatients = new ArrayList<Patient>();
 	
 	@ManyToOne
 	private Structure structure;

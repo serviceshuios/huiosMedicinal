@@ -1,17 +1,19 @@
 package com.huios.medical.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name = "specialites")
 public class Specialite extends AbstractActivity{
 
 	private String nomSpecialite;
-	@ManyToOne
-	private List<Praticien> praticiens;
+	@OneToMany
+	private List<Praticien> praticiens = new ArrayList<Praticien>();
+	
 	public String getNomSpecialite() {
 		return nomSpecialite;
 	}

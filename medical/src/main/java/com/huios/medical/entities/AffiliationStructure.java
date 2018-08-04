@@ -3,7 +3,8 @@ package com.huios.medical.entities;
 import java.util.Date;
 
 import javax.persistence.EmbeddedId;
-
+import javax.persistence.Entity;
+@Entity
 public class AffiliationStructure {
 
 	// ManyToMany entre Praticien et Payeur

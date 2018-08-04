@@ -3,9 +3,13 @@ package com.huios.medical.entities;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
 
-@MappedSuperclass
+//@MappedSuperclass
+@Entity
+@Table(name = "personnes")
 public class Personne extends AbstractActivity{
 
 	private static final long serialVersionUID = 1L; 

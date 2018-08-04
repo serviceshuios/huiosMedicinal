@@ -1,13 +1,16 @@
 package com.huios.medical.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
 @MappedSuperclass
-public class AbstractActivity {
+public class AbstractActivity implements Serializable {
 	
 	private static final long serialVersionUID = 1L; 
 	@Id

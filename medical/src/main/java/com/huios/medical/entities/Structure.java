@@ -26,6 +26,7 @@ public class Structure extends AbstractActivity{
 	private String telephone;
 	@ManyToOne
 	private Adresse adresse;
+	
 	public List<AffiliationStructure> getAffiliationStructure() {
 		return affiliationStructure;
 	}
@@ -33,9 +34,9 @@ public class Structure extends AbstractActivity{
 		this.affiliationStructure = affiliationStructure;
 	}
 	@OneToMany
-	private List<Service> servicesProposes;
+	private List<Service> servicesProposes = new ArrayList<Service>();
 	@OneToMany
-	private List<Praticien> listeProfessionnels;
+	private List<Praticien> listeProfessionnels = new ArrayList<Praticien>();
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="affiliationStructureId.structure")
