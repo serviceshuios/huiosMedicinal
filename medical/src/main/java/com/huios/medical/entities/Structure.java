@@ -1,5 +1,6 @@
 package com.huios.medical.entities;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "structures")
@@ -18,16 +21,25 @@ public class Structure extends AbstractActivity{
 	private String descriptionStructure;
 	private Byte[] photos;
 	private String siteweb;
-	
 	private String horairesOuverture;
 	private String contact;
 	private String telephone;
 	@ManyToOne
 	private Adresse adresse;
+	public List<AffiliationStructure> getAffiliationStructure() {
+		return affiliationStructure;
+	}
+	public void setAffiliationStructure(List<AffiliationStructure> affiliationStructure) {
+		this.affiliationStructure = affiliationStructure;
+	}
 	@OneToMany
 	private List<Service> servicesProposes;
 	@OneToMany
 	private List<Praticien> listeProfessionnels;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="affiliationStructureId.structure")
+	private List<AffiliationStructure> affiliationStructure = new ArrayList<AffiliationStructure>();
 	
 	public String getTypeDeStructure() {
 		return typeDeStructure;

@@ -26,6 +26,7 @@ public class Patient extends Personne {
 	@OneToMany(mappedBy="affiliationPatientId.patient")
 	private List<AffiliationPatient> affiliationPatient = new ArrayList<AffiliationPatient>();
 	
+	
 	public List<AffiliationPatient> getAffiliationPatient() {
 		return affiliationPatient;
 	}

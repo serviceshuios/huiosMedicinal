@@ -29,6 +29,22 @@ public class Payeur extends Personne {
 	@OneToMany(mappedBy="affiliationPatientId.payeur")
 	private List<AffiliationPatient> affiliationPatient = new ArrayList<AffiliationPatient>();
 	
+	public List<AffiliationPatient> getAffiliationPatient() {
+		return affiliationPatient;
+	}
+	public void setAffiliationPatient(List<AffiliationPatient> affiliationPatient) {
+		this.affiliationPatient = affiliationPatient;
+	}
+	public List<AffiliationStructure> getAffiliationStructure() {
+		return affiliationStructure;
+	}
+	public void setAffiliationStructure(List<AffiliationStructure> affiliationStructure) {
+		this.affiliationStructure = affiliationStructure;
+	}
+	@JsonIgnore
+	@OneToMany(mappedBy="affiliationStructureId.payeur")
+	private List<AffiliationStructure> affiliationStructure = new ArrayList<AffiliationStructure>();
+	
 	public Payeur() {
 		super();
 		// TODO Auto-generated constructor stub
