@@ -97,8 +97,10 @@ public class Payeur extends Personne {
 		this.siteWeb = siteWeb;
 		this.photo = photo;
 	}
+	public Payeur(String login, String mdp) {
+		super(login, mdp);
+		// TODO Auto-generated constructor stub
+	}
 
-
-	
 	
 }

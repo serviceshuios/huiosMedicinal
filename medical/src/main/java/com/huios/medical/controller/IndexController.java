@@ -4,10 +4,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PatientController {
+public class IndexController {
 
-	@RequestMapping("patient/index")
+	@RequestMapping("/index")
 	public String Index() {
-		return "Index Patient";
+		return "Index Application";
 	}
 }

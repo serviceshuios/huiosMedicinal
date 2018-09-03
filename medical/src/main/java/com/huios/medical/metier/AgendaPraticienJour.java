@@ -11,8 +11,11 @@ public class AgendaPraticienJour implements Serializable {
 	 private static final long serialVersionUID = 1L;
 	 
 	 // attributs
+	 // le praticien
 	 private Praticien praticien;
+	 // le jour
 	 private Date jour;
+	 // les créneaux du praticien avec ou sans rendez-vous
 	 private CreneauPraticienJour[] creneauxPraticienJour;
 	 
 	public AgendaPraticienJour() {

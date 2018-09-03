@@ -88,6 +88,12 @@ public class Patient extends Personne {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	public Patient(String login, String mdp) {
+		super(login, mdp);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
 		return "Patient [toString()=" + super.toString() + "]";

@@ -52,6 +52,14 @@ public class Rv extends AbstractActivity {
 		this.creneau = creneau;
 		this.payeur = payeur;
 	}
+	
+	public Rv(Date jour, Patient patient, Creneau creneau, Payeur payeur) {
+		super();
+		this.jour = jour;
+		this.patient = patient;
+		this.creneau = creneau;
+		this.payeur = payeur;
+	}
 	public Date getJour() {
 		return jour;
 	}

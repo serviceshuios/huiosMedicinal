@@ -27,6 +27,9 @@ public class Personne extends AbstractActivity{
 	@Column(length = 20)
 	private Date dateNaissance;
 	
+	private String login;
+	private String mdp;
+	
 
 	public Personne() {
 		super();
@@ -43,8 +46,52 @@ public class Personne extends AbstractActivity{
 		this.dateNaissance = dateNaissance;
 	}
 
+	public Personne(String login, String mdp) {
+		super();
+		this.login = login;
+		this.mdp = mdp;
+	}
+
+	public Personne(String titre, String nom, String prenom, String login, String mdp) {
+		super();
+		this.titre = titre;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.login = login;
+		this.mdp = mdp;
+	}
+
 	public String getTitre() {
 		return titre;
+	}
+
+	public Personne(Long id, Long version, String titre, String nom, String prenom, String email, String telephone,
+			Date dateNaissance, String login, String mdp) {
+		super(id, version);
+		this.titre = titre;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.dateNaissance = dateNaissance;
+		this.login = login;
+		this.mdp = mdp;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getMdp() {
+		return mdp;
+	}
+
+	public void setMdp(String mdp) {
+		this.mdp = mdp;
 	}
 
 	public void setTitre(String titre) {

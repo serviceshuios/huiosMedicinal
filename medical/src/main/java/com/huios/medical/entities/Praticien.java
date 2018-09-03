@@ -35,6 +35,11 @@ public class Praticien extends Personne {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Praticien(String login, String mdp) {
+		super(login, mdp);
+		// TODO Auto-generated constructor stub
+	}
+
 	public Specialite getSpectalite() {
 		return spectalite;
 	}

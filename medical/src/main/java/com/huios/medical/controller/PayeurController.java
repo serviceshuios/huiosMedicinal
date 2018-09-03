@@ -12,7 +12,7 @@ public class PayeurController {
 	@Autowired
 	private IPayeur iPayeur;
 	
-	@RequestMapping("/index")
+	@RequestMapping("payeur/index")
 	public String Index() {
 		return "Index Payeur";
 	}

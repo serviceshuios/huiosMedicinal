@@ -4,11 +4,14 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.huios.medical.entities.Adresse;
 import com.huios.medical.entities.Creneau;
 import com.huios.medical.entities.Patient;
+import com.huios.medical.entities.Payeur;
 import com.huios.medical.entities.Praticien;
 import com.huios.medical.entities.Rv;
 import com.huios.medical.metier.AgendaPraticienJour;
@@ -29,25 +32,25 @@ public class PraticienImpl implements IPraticien {
 	@Override
 	public List<Patient> getAllPatients() {
 		// TODO Auto-generated method stub
-		return null;
+		return patientRepository.findAll();
 	}
 
 	@Override
 	public List<Praticien> getAllPraticien() {
 		// TODO Auto-generated method stub
-		return null;
+		return praticienRepository.findAll();
 	}
 
 	@Override
 	public List<Creneau> getAllCreneaux(long idPraticien) {
 		// TODO Auto-generated method stub
-		return null;
+		return creneauRepository.getAllCreneaux(idPraticien);
 	}
 
 	@Override
 	public List<Rv> getRvMedecinJour(long idPraticien, Date jour) {
 		// TODO Auto-generated method stub
-		return null;
+		return rvRepository.getRvMedecinJour(idPraticien, jour);
 	}
 
 	@Override
@@ -75,17 +78,18 @@ public class PraticienImpl implements IPraticien {
 	}
 
 	@Override
-	public Rv ajouterRv(Date jour, Creneau creneau, Patient patient) {
+	public Rv ajouterRv(Date jour, Creneau creneau, Patient patient, Payeur payeur) {
 		// TODO Auto-generated method stub
-		return null;
+		Rv rv = new Rv(jour, patient, creneau, payeur);
+		return rvRepository.save(rv);
 	}
 
 	@Override
 	public void supprimerRv(long idRv) {
-		// TODO Auto-generated method stub
+		rvRepository.deleteById(idRv);
 
 	}
-
+// agenda du jour du Praticien
 	@Override
 	public AgendaPraticienJour getAgendaMedecinJour(long idPraticien, Date jour) {
 		// TODO Auto-generated method stub
@@ -93,21 +97,31 @@ public class PraticienImpl implements IPraticien {
 	}
 
 	@Override
-	public Boolean inscription(String login, String mdp) {
-		// TODO Auto-generated method stub
-		return null;
+	public Praticien inscription(Praticien p) {
+		return praticienRepository.save(p);
 	}
 
 	@Override
 	public Praticien Connexion(String login, String mdp) {
-		// TODO Auto-generated method stub
-		return null;
+		return praticienRepository.Connexion(login,mdp);
 	}
 
 	@Override
 	public void creationProfil(String nom, String prenom, int age, Adresse adresse) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		praticienRepository.deleteById(id);
+	}
+
+	@Override
+	public Page<Praticien> chercherPraticien(String nom, Pageable pageable) {
+		// TODO Auto-generated method stub
+		return praticienRepository.chercherPraticien(nom, pageable);
 	}
 
 }

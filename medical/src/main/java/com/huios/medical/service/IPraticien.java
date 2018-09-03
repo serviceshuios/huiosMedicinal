@@ -3,9 +3,14 @@ package com.huios.medical.service;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.query.Param;
+
 import com.huios.medical.entities.Adresse;
 import com.huios.medical.entities.Creneau;
 import com.huios.medical.entities.Patient;
+import com.huios.medical.entities.Payeur;
 import com.huios.medical.entities.Praticien;
 import com.huios.medical.entities.Rv;
 import com.huios.medical.metier.AgendaPraticienJour;
@@ -13,7 +18,7 @@ import com.huios.medical.metier.AgendaPraticienJour;
 public interface IPraticien {
 
 	     //s'enregistrer
-		public Boolean inscription(String login, String mdp);
+		public Praticien inscription(Praticien c);
 	    // se connecter
 		public Praticien Connexion(String login, String mdp);
 		// création d'un profil 
@@ -42,12 +47,14 @@ public interface IPraticien {
 		// trouver un créneau horaire identifié par son id
 		public Creneau getCreneauById(long id);
 
-		// ajouter un RV
-		public Rv ajouterRv(Date jour, Creneau creneau, Patient patient);
-
 		// supprimer un RV
 		public void supprimerRv(long idRv);
 
 		// metier
 		public AgendaPraticienJour getAgendaMedecinJour(long idPraticien, Date jour);
+		
+		Rv ajouterRv(Date jour, Creneau creneau, Patient patient, Payeur payeur);
+		public void delete(Long id);
+		
+		public Page<Praticien> chercherPraticien(String nom,Pageable pageable);
 }
